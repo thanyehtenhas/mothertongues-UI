@@ -1,6 +1,14 @@
+# Update instructions
+
+1. Export the spreadsheet from Google Sheets (export as xlsx)
+
+2. Select "Upload files"
+
+3. Drag and drop file, and click "Commit changes"
+
 # Mother Tongues Dictionaries UI (MTD-UI)
 
-*This repo is under construction and could change drastically in the coming months with breaking changes.*
+_This repo is under construction and could change drastically in the coming months with breaking changes._
 
 [![license](https://img.shields.io/github/license/roedoejet/mothertongues-UI.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
@@ -25,7 +33,7 @@ This is a basic [Ionic](https://ionicframework.com/) app for displaying Mother T
 
 ## Usage
 
-In order to use MTD-UI you must have a generated language configuration file and generated dictionary data from [MTD](https://github.com/roedoejet/mothertongues). 
+In order to use MTD-UI you must have a generated language configuration file and generated dictionary data from [MTD](https://github.com/roedoejet/mothertongues).
 Then, either fork or clone this repo and put those files in either the `www/assets/js/` folder right away or in `src/assets/js/` in order to build the app from source.
 
 ## Contributing
