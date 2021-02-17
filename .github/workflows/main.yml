@@ -1,0 +1,51 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Compile
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the release branch
+on:
+  push:
+    branches: [master]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  compile:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          path: ui
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mothertongues
+      - name: compile
+        run: |
+          cd $GITHUB_WORKSPACE/ui/config
+          rm -f -- *.js
+          mtd export . js .
+          find . -name 'dict_cached*.js' -exec mv {} $GITHUB_WORKSPACE/ui/www/assets/js/dict_cached.js \;
+          find . -name 'config*.js' -exec mv {} $GITHUB_WORKSPACE/ui/www/assets/js/config.js \;
+      - name: Commit new files
+        run: |
+          cd $GITHUB_WORKSPACE/ui
+          git config --local user.email "bot@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add .
+          git commit -a -m "chore: commit new compiled mtd files"
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: www
