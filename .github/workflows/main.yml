@@ -36,13 +36,6 @@ jobs:
           mtd export . js .
           find . -name 'dict_cached*.js' -exec mv {} $GITHUB_WORKSPACE/www/assets/js/dict_cached.js \;
           find . -name 'config*.js' -exec mv {} $GITHUB_WORKSPACE/www/assets/js/config.js \;
-      - name: Commit new files
-        run: |
-          cd $GITHUB_WORKSPACE/ui
-          git config --local user.email "bot@github.com"
-          git config --local user.name "GitHub Action Bot"
-          git add .
-          git commit -a -m "chore: commit new compiled mtd files"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
