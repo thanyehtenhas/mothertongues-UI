@@ -3,8 +3,14 @@
   "name": "words",
   "display": "word",
   "compare": "word",
-  "sorting": "word",
-  "transducers": [],
+  "sorting": "sort_form",
+  "transducers": [
+    {
+      "source": "word",
+      "target": "sort_form",
+      "functions": ["lambda x: x.lower()"]
+    }
+  ],
   "skipheader": true,
   "targets": {
     "definition": "B",
