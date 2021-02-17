@@ -1,0 +1,29 @@
+{
+  "config": {
+    "L1": "Kanyen'k\u00e9ha",
+    "L2": "English",
+    "optional_field_title": "Optional Information",
+    "alphabet": "./alphabet.json",
+    "credits": [
+      {
+        "role": "funding",
+        "name": "TTO"
+      },
+      {
+        "role": "developers",
+        "name": "Aidan Pine"
+      }
+    ]
+  },
+  "data": [
+    {
+      "manifest": "./manifest.json",
+      "resource": "../data.xlsx"
+    }
+  ],
+  "adhoc_vars": [
+    {
+      "theme_hierarchy": false
+    }
+  ]
+}

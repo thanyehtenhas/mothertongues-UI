@@ -1,0 +1,14 @@
+{
+  "file_type": "xlsx",
+  "name": "words",
+  "display": "word",
+  "compare": "word",
+  "sorting": "word",
+  "transducers": [],
+  "skipheader": true,
+  "targets": {
+    "definition": "B",
+    "word": "A",
+    "theme": "C"
+  }
+}
