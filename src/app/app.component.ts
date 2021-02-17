@@ -25,15 +25,14 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
 
-  constructor(public platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, public storage: Storage, public mtdService: MTDService) {
-
-
+  constructor(public platform: Platform, private statusBar: StatusBar,
+    private splashScreen: SplashScreen, public storage: Storage, public mtdService: MTDService) {
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Search', component: Search },
       { title: 'Browse', component: Browse },
-      { title: 'Pick a Random Word!', component: Random },
+      { title: 'Random', component: Random },
       { title: 'Bookmarks', component: Bookmarks },
       { title: 'Flashcards', component: Flashcards },
       { title: 'About', component: About }
@@ -56,7 +55,7 @@ export class MyApp {
             val = JSON.parse(val);
             let favs = [];
             for (let fav of val) {
-              for (let entry of MTDInfo.dataDict.filter(x=>x['source'] == fav['source'])) {
+              for (let entry of MTDInfo.dataDict.filter(x => x['source'] == fav['source'])) {
                 if (entry.entryID === fav.entryID) {
                   entry.favourited = true;
                   favs.push(entry)
