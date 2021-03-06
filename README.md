@@ -4,7 +4,9 @@
 
 2. Select "Upload files"
 
-3. Drag and drop file, and click "Commit changes"
+3. Name it 'data.xlsx' and drag and drop the file to replace the current one in the root of this repo.
+
+4. Add a message if you like describing what has changed, and click "Commit changes"
 
 # Mother Tongues Dictionaries UI (MTD-UI)
 
