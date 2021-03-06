@@ -15,6 +15,11 @@
   "targets": {
     "definition": "B",
     "word": "A",
-    "theme": "C"
+    "theme": "C",
+    "optional": [
+      {
+        "Pronunciation": "H"
+      }
+    ]
   }
 }
